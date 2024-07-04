@@ -1,0 +1,22 @@
+* {
+  background-color: #10141E;
+  color: white;
+}
+.body {
+   margin: 0px;
+}
+.sidebar {
+    background-color: #161D2F; /* Arka plan rengi */
+    width: 96px; /* Sidebar genişliği */
+    height: 960px; /* Ekran yüksekliği kadar genişletme */
+    margin-top:32px;
+    margin-bottom: 32px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* İçerikten kenarlara mesafe */
+    box-sizing: border-box; /* Padding'i içeriğin dışında tutmak için */
+    color: white; /* Yazı rengi */
+    border-radius: 40px;
+    align-items: center;
+}
