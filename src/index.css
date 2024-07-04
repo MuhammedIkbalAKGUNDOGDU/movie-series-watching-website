@@ -1,22 +1,94 @@
 * {
-  background-color: #10141E;
+  background-color: #10141e;
   color: white;
 }
 .body {
-   margin: 0px;
+  margin: 0px;
+}
+.container{
+  display: flex;
+}
+.container2{
+  display: flex;
+  flex-direction: row;
 }
 .sidebar {
-    background-color: #161D2F; /* Arka plan rengi */
-    width: 96px; /* Sidebar genişliği */
-    height: 960px; /* Ekran yüksekliği kadar genişletme */
-    margin-top:32px;
-    margin-bottom: 32px;
-    margin-left: 32px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px; /* İçerikten kenarlara mesafe */
-    box-sizing: border-box; /* Padding'i içeriğin dışında tutmak için */
-    color: white; /* Yazı rengi */
-    border-radius: 40px;
-    align-items: center;
+  background-color: #161d2f; /* Arka plan rengi */
+  width: 96px; /* Sidebar genişliği */
+  height: 960px; /* Ekran yüksekliği kadar genişletme */
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* İçerikten kenarlara mesafe */
+  box-sizing: border-box; /* Padding'i içeriğin dışında tutmak için */
+  color: white; /* Yazı rengi */
+  border-radius: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-images {
+  background-color: #161d2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Öğeleri ortalamak için */
+  margin-top: 3rem;
+}
+.inner-sidebar {
+  background-color: #161d2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Öğeleri ortalamak için */
+}
+.inner-sidebar img {
+  width: 25px; /* Vektörlerin genişliğini küçültmek için */
+  height: 25px; /* Vektörlerin yüksekliğini küçültmek için */
+  margin-bottom: 20px; /* Resimler arasında boşluk bırakmak için */
+}
+
+.sidebar-avatar{
+  background-color: #161d2f;
+}
+
+.sidebar-logo {
+  background-color: #161d2f;
+  margin-top: 1rem;
+}
+.sidebar-logo img {
+  width: 40px; /* Logonun genişliğini ayarlamak için */
+  height: 40px; /* Logonun yüksekliğini ayarlamak için */
+}
+
+.deneme{
+  display: flex;
+}
+
+.search-container{
+  margin-top: 32px;
+  margin-left: 66px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input{
+  border-color: #10141e;
+  width: 381px;
+  height: 32px;
+  border-width: 0px;
+}
+
+.container-trends{
+  margin-left: 66px;
+  margin-top: 34px;
+}
+
+.trend-title{
+  font-size: x-large;
+}
+.sidebar-click:hover{
+  cursor: url(hand.cur), pointer;
+  
 }
