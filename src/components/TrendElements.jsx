@@ -7,7 +7,7 @@ const TrendElements = ({ year, type, name, attention, splashart }) => {
   };
 
   return (
-    <div className="element-container">
+    <div className="trend-container">
       <img className="trend-splashart" src={splashart} alt="Element Image" />
       <div className="trends-splashart-properties">
         <div className="element-properties">

@@ -85,7 +85,7 @@
 .search-input:focus {
   outline: none; /* Varsayılan outline'ı kaldır */
   border-radius: 20px;
-  border-color: #161d2f; /* İstediğiniz renk kodunu girin */
+  border-bottom-color: #161d2f; /* İstediğiniz renk kodunu girin */
   border-width: 3px; /* İstediğiniz genişliği girin */
 }
 .container-trends {
@@ -118,6 +118,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  max-width: 280px;
 }
 .element-container:hover{
   
@@ -166,6 +167,12 @@
 
 }
 
+.trend-container{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .trend-elements{
   display: flex;
   margin-top: 30px;
@@ -187,4 +194,5 @@
   font-size: 30px;
   font-weight: bolder;
 }
+
 

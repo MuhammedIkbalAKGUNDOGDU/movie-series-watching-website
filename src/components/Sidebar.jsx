@@ -5,26 +5,29 @@ import Logo from "../assets/logo.svg";
 import Tv from "../assets/tv.svg";
 import Bookmark from "../assets/bookmark.svg";
 import Avatar from "../assets/avatar.png";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="sidebar">
       <div className="inner-sidebar">
         <div className="sidebar-logo">
-          <img className="sidebar-logo sidebar-click" src={Logo} alt="" />
+          <img onClick={() => navigate("/")} className="sidebar-logo sidebar-click" src={Logo} alt="" />
         </div>
         <div className="sidebar-images">
           <div className="sidebar-images">
-            <img className="sidebar-click" src={Home} alt="" />
+            <img onClick={() => navigate("/")} className="sidebar-click" src={Home} alt="" />
           </div>
           <div className="sidebar-images">
-            <img className="sidebar-click" src={Movie} alt="" />
+            <img onClick={() => navigate("/movie")} className="sidebar-click" src={Movie} alt="" />
           </div>
           <div className="sidebar-images">
-            <img className="sidebar-click" src={Tv} alt="" />
+            <img onClick={() => navigate("/tv")} className="sidebar-click" src={Tv} alt="" />
           </div>
           <div className="sidebar-images">
-            <img className="sidebar-click" src={Bookmark} alt="" />
+            <img onClick={() => navigate("/bookmarked")} className="sidebar-click" src={Bookmark} alt="" />
           </div>
         </div>
       </div>
