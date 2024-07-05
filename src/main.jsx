@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import TvSeries from "./pages/TvSeries";
 import Movies from "./pages/Movies";
 import Bookmarked from "./pages/Bookmarked";
+import OneElement from "./pages/OneElement";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/register" element={<Register />} />
       <Route exact path="/bookmarked" element={<Bookmarked />} />
+      <Route exact path="/movie/:id" element={<OneElement />} /> {/* Dynamic route */}
+      <Route exact path="/tv/:id" element={<OneElement />} /> {/* Dynamic route */}
+
     </Routes>
   </BrowserRouter>
 );

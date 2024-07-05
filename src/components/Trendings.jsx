@@ -53,6 +53,7 @@ const Trendings = () => {
             name={item.media_type === "movie" ? item.title : item.name}
             attention={item.adult}
             splashart={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            id={item.id}
           />
         ))}
       </div>

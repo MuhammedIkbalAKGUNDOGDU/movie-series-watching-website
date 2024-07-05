@@ -1,22 +1,35 @@
 import React from "react";
 import Movie from "../assets/movies.svg";
+import { useNavigate } from "react-router-dom";
 
-const TrendElements = ({ year, type, name, attention, splashart }) => {
+const TrendElements = ({ year, type, name, attention, splashart, id }) => {
   const adult = () => {
     return attention ? "18+" : "PG";
   };
 
+  const navigate = useNavigate();
+
+  const navigateToPage = () => {
+    if(type == Movie){
+      navigate(`/movie/${id}`); // Navigate to a dynamic route based on the type
+    }else{
+      navigate(`/tv/${id}`); // Navigate to a dynamic route based on the type
+
+    }
+  }
+
+
   return (
-    <div className="trend-container">
+    <div onClick={navigateToPage} className="trend-container">
       <img className="trend-splashart" src={splashart} alt="Element Image" />
       <div className="trends-splashart-properties">
         <div className="element-properties">
-          <div>{year}</div>
-          <div>*</div>
+          <div className="trend-element-properties">{year}</div>
+          <div className="trend-element-properties">•</div>
           <img src={Movie} alt="Movie Icon" />
-          <div>{type}</div>
-          <div>*</div>
-          <div>{adult()}</div>
+          <div className="trend-element-properties">{type}</div>
+          <div className="trend-element-properties">•</div>
+          <div className="trend-element-properties">{adult()}</div>
         </div>
         <div className="element-name trend-name">{name}</div>
       </div>
