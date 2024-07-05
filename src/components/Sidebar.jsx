@@ -29,7 +29,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="sidebar-images">
-        <img className="sidebar-avatar click" src={Avatar} alt="" />
+        <img className="sidebar-avatar sidebar-avatar-click" src={Avatar} alt="" />
       </div>
     </div>
   );
