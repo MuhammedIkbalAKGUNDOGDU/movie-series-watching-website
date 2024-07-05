@@ -2,7 +2,7 @@ import React ,{ useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import Searcbox from "../components/Searcbox";
 import Trendings from "../components/Trendings";
-import Recommended from "../components/ElementShow";
+import MovieShow from "../components/MovieShow";
 const Movies = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const Movies = () => {
       <Sidebar />
       <div className="container-2">
         <Searcbox />
-        <Recommended Title="Movies"/>
+        <MovieShow Title="Movies"/>
       </div>
     </div>
   </>
