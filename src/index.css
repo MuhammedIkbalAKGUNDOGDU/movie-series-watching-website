@@ -5,10 +5,10 @@
 .body {
   margin: 0px;
 }
-.container{
+.container {
   display: flex;
 }
-.container2{
+.container2 {
   display: flex;
   flex-direction: row;
 }
@@ -47,7 +47,7 @@
   margin-bottom: 20px; /* Resimler arasında boşluk bırakmak için */
 }
 
-.sidebar-avatar{
+.sidebar-avatar {
   background-color: #161d2f;
 }
 
@@ -60,11 +60,11 @@
   height: 40px; /* Logonun yüksekliğini ayarlamak için */
 }
 
-.deneme{
+.deneme {
   display: flex;
 }
 
-.search-container{
+.search-container {
   margin-top: 32px;
   margin-left: 66px;
   display: flex;
@@ -73,34 +73,43 @@
   align-items: center;
 }
 
-.search-input{
+.search-input {
   border-color: #10141e;
   width: 381px;
   height: 32px;
   border-width: 0px;
+  border: 2px solid #10141e;
+  transition: border-color 0.3s, border-width 0.3s;
+  padding-left: 20px; /* Sadece sol tarafa ekstra 20px boşluk ekler */
 }
 
-.container-trends{
+.search-input:focus {
+  outline: none; /* Varsayılan outline'ı kaldır */
+  border-radius: 20px;
+  border-color: #161d2f; /* İstediğiniz renk kodunu girin */
+  border-width: 3px; /* İstediğiniz genişliği girin */
+}
+.container-trends {
   margin-left: 66px;
   margin-top: 34px;
 }
 
-.trend-title{
+.trend-title {
   font-size: x-large;
 }
-.sidebar-click:hover{
+.sidebar-click:hover {
   cursor: url(hand.cur), pointer;
   width: 40px;
   height: 40px;
 }
 
-.sidebar-logo .sidebar-click:hover{
+.sidebar-logo .sidebar-click:hover {
   cursor: url(hand.cur), pointer;
   width: 50px;
   height: 50px;
 }
 
-.sidebar-avatar-click:hover{
+.sidebar-avatar-click:hover {
   cursor: url(hand.cur), pointer;
   width: 90px;
   height: 90px;

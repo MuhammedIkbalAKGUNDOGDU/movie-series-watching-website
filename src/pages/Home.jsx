@@ -3,6 +3,8 @@ import Sidebar from "../components/Sidebar";
 import Searcbox from "../components/Searcbox";
 import Trendings from "../components/Trendings";
 import Recommended from "../components/Recommended";
+import useSWR from 'swr';
+
 const Home = () => {
   return (
     <>
