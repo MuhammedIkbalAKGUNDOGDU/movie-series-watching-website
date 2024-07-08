@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Element from "../components/Element";
 
-const Recommended = ({ Title }) => {
+const Recommended = ({ Title, searchQuery }) => {
   const [tvShows, setTVShows] = useState([]);
+  const [filteredTvShows, setFilteredTvShows] = useState([]);
 
   useEffect(() => {
-
     const fetchTVShows = async () => {
       try {
         const response = await fetch(
@@ -24,18 +24,24 @@ const Recommended = ({ Title }) => {
     fetchTVShows();
   }, []); // Only call once
 
+  useEffect(() => {
+    const filtered = tvShows.filter(tvShow => 
+      tvShow.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredTvShows(filtered);
+  }, [tvShows, searchQuery]);
+
   return (
     <div className="container-trends">
       <div className="trend-title">{Title}</div>
       <div className="element-box">
-
-        {tvShows.map((tvShow) => (
+        {filteredTvShows.map((tvShow) => (
           <Element
             key={tvShow.id}
-            year={tvShow.first_air_date ? tvShow.first_air_date.substring(0, 4) : ""} // Get year if first_air_date exists
-            type="TV Show" // Correct type for TV show
-            name={tvShow.name} // TV show title
-            attention={tvShow.adult ? "18+" : "PG"} // Example logic based on adult property
+            year={tvShow.first_air_date ? tvShow.first_air_date.substring(0, 4) : ""}
+            type="TV Show"
+            name={tvShow.name}
+            attention={tvShow.adult ? "18+" : "PG"}
             splashart={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
             id={tvShow.id}
           />

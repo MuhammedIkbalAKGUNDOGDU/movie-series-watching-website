@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Element from "../components/Element";
 
-const Recommended = ({ Title }) => {
+const Recommended = ({ Title, searchQuery }) => {
   const [movies, setMovies] = useState([]);
   const [tvShows, setTVShows] = useState([]);
+  const [filteredContent, setFilteredContent] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchMovies = async () => {
       try {
         const response = await fetch(
           "https://api.themoviedb.org/3/discover/movie?api_key=365a153ca89400a4c6bd390fbbe93f59"
@@ -36,37 +37,33 @@ const Recommended = ({ Title }) => {
       }
     };
 
-    fetchData();
+    fetchMovies();
     fetchTVShows();
   }, []); // Only call once
+
+  useEffect(() => {
+    const filteredMovies = movies.filter(movie =>
+      movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    const filteredTvShows = tvShows.filter(tvShow =>
+      tvShow.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredContent([...filteredMovies, ...filteredTvShows]);
+  }, [movies, tvShows, searchQuery]);
 
   return (
     <div className="container-trends">
       <div className="trend-title">{Title}</div>
       <div className="element-box">
-        {movies.map((movie) => (
+        {filteredContent.map(content => (
           <Element
-            key={movie.id}
-            year={movie.release_date ? movie.release_date.substring(0, 4) : ""} // Get year if release_date exists
-            type="Movie"
-            name={movie.title}
-            attention={movie.adult ? "18+" : "PG"} // Example logic based on adult property
-            splashart={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            id={movie.id}
-          />
-        ))}
-
-        {tvShows.map((tvShow) => (
-          <Element
-            key={tvShow.id}
-            year={
-              tvShow.first_air_date ? tvShow.first_air_date.substring(0, 4) : ""
-            } // Get year if first_air_date exists
-            type="TV Show" // Correct type for TV show
-            name={tvShow.name} // TV show title
-            attention={tvShow.adult ? "18+" : "PG"} // Example logic based on adult property
-            splashart={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
-            id={tvShow.id}
+            key={content.id}
+            year={content.release_date ? content.release_date.substring(0, 4) : (content.first_air_date ? content.first_air_date.substring(0, 4) : "")}
+            type={content.title ? "Movie" : "TV Show"}
+            name={content.title || content.name}
+            attention={content.adult ? "18+" : "PG"}
+            splashart={`https://image.tmdb.org/t/p/w500${content.poster_path}`}
+            id={content.id}
           />
         ))}
       </div>
