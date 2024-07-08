@@ -1,20 +1,24 @@
-import React ,{ useState, useEffect } from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import Searcbox from "../components/Searcbox";
-import Trendings from "../components/Trendings";
+import Searchbox from "../components/Searcbox";
 import MovieShow from "../components/MovieShow";
+
 const Movies = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
-    <>
     <div className="container">
       <Sidebar />
       <div className="container-2">
-        <Searcbox />
-        <MovieShow Title="Movies"/>
+        <Searchbox onSearch={handleSearch} />
+        <MovieShow Title="Movies" searchQuery={searchQuery} />
       </div>
     </div>
-  </>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;

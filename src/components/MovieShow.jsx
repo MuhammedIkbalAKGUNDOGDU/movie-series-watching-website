@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Element from "../components/Element";
 
-const MovieShow = ({ Title }) => {
+const MovieShow = ({ Title, searchQuery  }) => {
   const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,11 +24,18 @@ const MovieShow = ({ Title }) => {
     fetchData();
   }, []); // Only call once
 
+  useEffect(() => {
+    const filtered = movies.filter(movie => 
+      movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredMovies(filtered);
+  }, [movies, searchQuery]);
+
   return (
     <div className="container-trends">
       <div className="trend-title">{Title}</div>
       <div className="element-box">
-        {movies.map((movie) => (
+        {filteredMovies.map((movie) => (
           <Element
             key={movie.id}
             year={movie.release_date ? movie.release_date.substring(0, 4) : ""} // Get year if release_date exists
