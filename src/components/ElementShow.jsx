@@ -19,7 +19,7 @@ const Recommended = ({ Title, searchQuery }) => {
         setMovies(data.results); // Set movie data
       } catch (error) {
         console.error("Error fetching movies:", error);
-      }
+      } 
     };
 
     const fetchTVShows = async () => {

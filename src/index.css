@@ -35,6 +35,7 @@
   align-items: center; /* Öğeleri ortalamak için */
   margin-top: 3rem;
 }
+
 .inner-sidebar {
   background-color: #161d2f;
   display: flex;

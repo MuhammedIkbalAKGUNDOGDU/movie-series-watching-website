@@ -1,20 +1,24 @@
-import React ,{ useState, useEffect } from "react";
+import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import Searcbox from "../components/Searcbox";
-import Trendings from "../components/Trendings";
+import Searchbox from "../components/Searcbox";
 import Recommended from "../components/ElementShow";
 
 const Bookmarked = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
     <div className="container">
-        <Sidebar />
-        <div className="container-2">
-          <Searcbox />
-          <Recommended Title="Bookmarked Movies"/>
-          <Recommended Title="Bookmarked TV Series"/>
-        </div>
+      <Sidebar />
+      <div className="container-2">
+        <Searchbox onSearch={handleSearch} />
+        <Recommended Title="Bookmarked Movies and TV Series" searchQuery={searchQuery} />
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Bookmarked
+export default Bookmarked;
