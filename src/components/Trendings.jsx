@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TrendElements from './TrendElements';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Trendings = () => {
   const [trendings, setTrendings] = useState([]);
@@ -55,8 +57,11 @@ const Trendings = () => {
             splashart={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
             id={item.id}
           />
+          
         ))}
+       
       </div>
+      
     </div>
   );
 };

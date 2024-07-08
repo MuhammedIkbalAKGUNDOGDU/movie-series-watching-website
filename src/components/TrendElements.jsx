@@ -1,6 +1,7 @@
 import React from "react";
 import Movie from "../assets/movies.svg";
 import { useNavigate } from "react-router-dom";
+import { MdLocalMovies } from "react-icons/md";
 
 const TrendElements = ({ year, type, name, attention, splashart, id }) => {
   const adult = () => {
@@ -26,7 +27,7 @@ const TrendElements = ({ year, type, name, attention, splashart, id }) => {
         <div className="element-properties">
           <div className="trend-element-properties">{year}</div>
           <div className="trend-element-properties">•</div>
-          <img src={Movie} alt="Movie Icon" />
+          <MdLocalMovies style={{backgroundColor : "transparent"}}/>
           <div className="trend-element-properties">{type}</div>
           <div className="trend-element-properties">•</div>
           <div className="trend-element-properties">{adult()}</div>

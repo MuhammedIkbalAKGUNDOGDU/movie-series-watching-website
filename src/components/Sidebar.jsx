@@ -1,14 +1,17 @@
 import React from "react";
-import Home from "../assets/home.svg";
-import Movie from "../assets/movies.svg";
 import Logo from "../assets/logo.svg";
-import Tv from "../assets/tv.svg";
-import Bookmark from "../assets/bookmark.svg";
 import Avatar from "../assets/avatar.png";
 import { useNavigate } from "react-router-dom";
 
+import { FaHome } from "react-icons/fa";
+import { MdLocalMovies } from "react-icons/md";
+import { PiTelevision } from "react-icons/pi";
+import { FaBookmark } from "react-icons/fa";
+
+
 const Sidebar = () => {
   const navigate = useNavigate();
+ 
 
   return (
     <div className="sidebar">
@@ -18,16 +21,18 @@ const Sidebar = () => {
         </div>
         <div className="sidebar-images">
           <div className="sidebar-images">
-            <img onClick={() => navigate("/")} className="sidebar-click" src={Home} alt="" />
+            <FaHome onClick={() => navigate("/")} className="sidebar-click sidebar-icon"/>
           </div>
           <div className="sidebar-images">
-            <img onClick={() => navigate("/movie")} className="sidebar-click" src={Movie} alt="" />
+            <MdLocalMovies onClick={() => navigate("/movie")} className="sidebar-click sidebar-icon"/>
           </div>
           <div className="sidebar-images">
-            <img onClick={() => navigate("/tv")} className="sidebar-click" src={Tv} alt="" />
+            <PiTelevision onClick={() => navigate("/tv")} className="sidebar-click sidebar-icon"/>
+
           </div>
           <div className="sidebar-images">
-            <img onClick={() => navigate("/bookmarked")} className="sidebar-click" src={Bookmark} alt="" />
+            <FaBookmark onClick={() => navigate("/bookmarked")} className="sidebar-click sidebar-icon"/>
+
           </div>
         </div>
       </div>

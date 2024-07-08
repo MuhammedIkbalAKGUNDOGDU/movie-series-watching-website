@@ -101,6 +101,18 @@
   cursor: url(hand.cur), pointer;
 
   transform: scale(1.3); /* Üstüne gelince büyüme efekti */
+  fill: #fc4747;
+}
+
+.sidebar-click:active{
+  fill:white ;
+}
+
+.sidebar-icon{
+  fill: #5A698F;
+  width: 30px;
+  height: 30px;
+  background-color: #161d2f;
 }
 
 .sidebar-logo .sidebar-click:hover {
@@ -263,3 +275,91 @@
   z-index: 1; /* Yazıların görselin üzerinde kalması için */
 }
 
+.login-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 373px;
+  padding: 20px;
+  background-color: #161d2f; 
+  border-radius: 8px;
+}
+.login{
+  background-color: #161d2f;
+  font-size: xx-large;
+  margin-left: 30px;
+}
+.login-emaill{
+  background-color: transparent;
+  border: none;
+  border-bottom: #5A698F;
+  margin-top: 60px;
+  font-size: large;
+  height: 37px;
+  width: 336px;
+  border-bottom: 2px solid #5A698F;
+  caret-color: #fc4747;
+}
+.login-password{
+  background-color: transparent;
+  border: none;
+  font-size: large;
+  border-bottom: #5A698F;
+  margin-top: 20px;
+  height: 37px;
+  width: 336px;
+  border-bottom: 2px solid #5A698F;
+  caret-color: #fc4747;
+}
+
+.login-button{
+  background-color: #fc4747;
+  width: 336px;
+  height: 48px;
+  border-radius: 8px;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.login-button:hover{
+  cursor: url(hand.cur), pointer;
+}
+
+.login-emaill:focus,
+.login-password:focus {
+  outline: none;
+  border-bottom: 2px solid white; /* Odaklanıldığında alt bordür rengini değiştir */
+}
+
+.inner-container-login{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-color: transparent;
+  flex-direction: column;
+}
+
+.login-container2{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.login-signup{
+  color: #fc4747;
+}
+.login-signup:hover{
+  cursor: url(hand.cur), pointer;
+}
+
+.login-logo{
+  background-color: #161d2f;
+  margin-bottom: 75px;
+}

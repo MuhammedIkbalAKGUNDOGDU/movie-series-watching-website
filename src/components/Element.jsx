@@ -1,7 +1,8 @@
 import React from "react";
 import Movie from "../assets/movies.svg";
 import { useNavigate } from "react-router-dom";
-
+import { MdLocalMovies } from "react-icons/md";
+import { PiTelevision } from "react-icons/pi";
 
 const Element = ({ year, type, name, attention, splashart, id }) => {
   const adult = () => {
@@ -17,13 +18,23 @@ const Element = ({ year, type, name, attention, splashart, id }) => {
     }
   }
 
+  const tvOrMovie = (type) => {
+    if(type == "Movie"){
+       return <MdLocalMovies></MdLocalMovies>
+    }else{
+      return <PiTelevision></PiTelevision>
+    }
+  }
+
   return (
     <div onClick={navigateToPage} className="element-container">
       <img className="element-splashart" src={splashart} alt="Element Image" />
       <div className="element-properties">
         <div>{year}</div>
         <div>•</div>
-        <img className="properties-icon"src={Movie} alt="Movie Icon" />
+        <div>
+          {tvOrMovie(type)}
+        </div>
         <div>{type}</div>
         <div>•</div>
         <div>{adult()}</div>
