@@ -98,15 +98,13 @@
 }
 .sidebar-click:hover {
   cursor: url(hand.cur), pointer;
-  
-  transform: scale(1.3); /* Üstüne gelince büyüme efekti */
 
+  transform: scale(1.3); /* Üstüne gelince büyüme efekti */
 }
 
 .sidebar-logo .sidebar-click:hover {
   cursor: url(hand.cur), pointer;
   transform: scale(1.3); /* Üstüne gelince büyüme efekti */
-
 }
 
 .sidebar-avatar-click:hover {
@@ -115,32 +113,27 @@
   height: 90px;
 }
 
-.element-container{
+.element-container {
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 280px;
 }
-.element-container:hover{
-  
-}
-
-.element-properties{
+.element-properties {
   display: flex;
   gap: 10px;
   font-size: small;
   margin: 10px;
-
 }
 
-.element-name{
+.element-name {
   display: flex;
   margin-left: 10px;
   font-size: large;
   font-weight: bolder;
 }
 
-.element-box{
+.element-box {
   margin-top: 30px;
   display: flex;
   justify-content: space-between; /* Elemanları en üst ve en altta boşluklarla yerleştir */
@@ -149,33 +142,30 @@
   flex-wrap: wrap;
 }
 
-.element-splashart{
+.element-splashart {
   width: 280px;
   height: 174px;
   border-radius: 20px;
   object-fit: cover; /* Ensures the image covers the entire container */
-
 }
 
-.trends-splashart-properties{
+.trends-splashart-properties {
   position: absolute;
   background: transparent;
   bottom: 20px;
   left: 20px;
-  div{
+  div {
     background: transparent;
-
   }
-
 }
 
-.trend-container{
+.trend-container {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.trend-elements{
+.trend-elements {
   display: flex;
   margin-top: 30px;
   display: flex;
@@ -185,8 +175,9 @@
   flex-wrap: nowrap;
 }
 
-.trend-element-properties ,.trend-name{
-  color:  white
+.trend-element-properties,
+.trend-name {
+  color: white;
 }
 .trend-splashart {
   width: 470px; /* Set the width */
@@ -195,55 +186,54 @@
   border-radius: 20px; /* Optional: Rounded corners */
 }
 
-.trend-name{
+.trend-name {
   font-size: 30px;
   font-weight: bolder;
 }
 
-.oneElement-Container{
+.oneElement-Container {
   display: flex;
 }
 
-.oneElement-Container2{
+.oneElement-Container2 {
   margin-left: 30px;
   justify-content: center;
 }
-.oneElement-inner-container{
+.oneElement-inner-container {
   display: flex;
 }
 
-.oneElement-properties{
+.oneElement-properties {
   margin-left: 30px;
   margin-bottom: 30px;
-  
 }
 
-.oneElement-properties-img{
+.oneElement-properties-img {
   width: 50px;
   height: 50px;
 }
 
-.oneElement-properties-img-container{
+.oneElement-properties-img-container {
   display: flex;
   transition: transform 0.2s ease-in-out; /* Animasyon için transition eklendi */
   background-color: transparent;
-  div{
+  div {
     margin-top: 7px;
     margin-left: 7px;
     font-size: xx-large;
-    color: #FC4747;
+    color: #fc4747;
   }
 }
 
-.oneElement-properties-img-container:hover{
+.oneElement-properties-img-container:hover {
   cursor: url(hand.cur), pointer;
-    transform: scale(1.1); /* Üstüne gelince büyüme efekti */
+  transform: scale(1.1); /* Üstüne gelince büyüme efekti */
 }
 
-.element-container:hover , .trend-container:hover{
+.element-container:hover,
+.trend-container:hover {
   cursor: url(hand.cur), pointer;
   transform: scale(1.05); /* Üstüne gelince büyüme efekti */
-
 }
 
 .trend-container::after {
@@ -252,8 +242,12 @@
   bottom: 0; /* Alt kenara hizala */
   left: 0; /* Sol kenara hizala */
   width: 100%; /* Tam genişlik */
-  height: 100%;/* Görselin alt kısmının yüzdesi */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); /* Karartma efekti */
+  height: 100%; /* Görselin alt kısmının yüzdesi */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    transparent
+  ); /* Karartma efekti */
   z-index: 0; /* Arkaplanın görselin altında kalması için */
 }
 

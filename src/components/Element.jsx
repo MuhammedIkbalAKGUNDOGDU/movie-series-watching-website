@@ -7,7 +7,6 @@ const Element = ({ year, type, name, attention, splashart, id }) => {
   const adult = () => {
     return attention ? "18+" : "PG";
   };
-  console.log(id)
   const navigate = useNavigate();
 
   const navigateToPage = () => {

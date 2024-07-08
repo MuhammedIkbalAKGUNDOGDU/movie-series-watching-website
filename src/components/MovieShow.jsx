@@ -35,6 +35,7 @@ const MovieShow = ({ Title }) => {
             name={movie.title}
             attention={movie.adult ? "18+" : "PG"} // Example logic based on adult property
             splashart={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            id={movie.id}
           />
         ))}
 

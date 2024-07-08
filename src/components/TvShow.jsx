@@ -37,6 +37,7 @@ const Recommended = ({ Title }) => {
             name={tvShow.name} // TV show title
             attention={tvShow.adult ? "18+" : "PG"} // Example logic based on adult property
             splashart={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
+            id={tvShow.id}
           />
         ))}
       </div>
