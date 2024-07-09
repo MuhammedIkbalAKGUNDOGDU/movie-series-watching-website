@@ -41,7 +41,7 @@ const Recommended = ({ Title, searchQuery }) => {
             year={tvShow.first_air_date ? tvShow.first_air_date.substring(0, 4) : ""}
             type="TV Show"
             name={tvShow.name}
-            attention={tvShow.adult ? "18+" : "PG"}
+            attention={tvShow.adult}
             splashart={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
             id={tvShow.id}
           />

@@ -6,7 +6,8 @@ import { PiTelevision } from "react-icons/pi";
 
 const Element = ({ year, type, name, attention, splashart, id }) => {
   const adult = () => {
-    return attention ? "18+" : "PG";
+    return (attention) ? "18+" : "PG";
+    
   };
   const navigate = useNavigate();
 

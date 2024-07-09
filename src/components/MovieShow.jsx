@@ -41,7 +41,7 @@ const MovieShow = ({ Title, searchQuery  }) => {
             year={movie.release_date ? movie.release_date.substring(0, 4) : ""} // Get year if release_date exists
             type="Movie"
             name={movie.title}
-            attention={movie.adult ? "18+" : "PG"} // Example logic based on adult property
+            attention={movie.adult} // Example logic based on adult property
             splashart={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             id={movie.id}
           />
