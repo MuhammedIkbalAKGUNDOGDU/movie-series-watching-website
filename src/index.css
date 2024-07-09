@@ -363,3 +363,68 @@
   background-color: #161d2f;
   margin-bottom: 75px;
 }
+
+.bookmark-sign{
+  position: absolute;
+  background-color: rgba(16, 20, 30, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+  top: 5%;
+  left: 80%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bookmark-sign:hover{
+  transform: scale(1.2); /* Üstüne gelince büyüme efekti */
+}
+
+.bookmark-sign-icon{
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+}
+
+.bookmark-container{
+  display: flex;
+  margin-left: 60px;
+  margin-top: 30px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.login-emaill.error-border,
+.login-password.error-border {
+  border-color: #dc3545; /* Hata durumunda border rengi */
+}
+
+.login-emaill.error-border:focus,
+.login-password.error-border:focus {
+  border-color: #dc3545; /* Hata durumunda aktif border rengi */
+  outline: none;
+}
+
+.active{
+  fill: white;
+}
+
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #10141e; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fc4747; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Roundness of the scrollbar thumb */
+  border:#161d2f; /* Padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc3545; /* Color of the scrollbar thumb on hover */
+}

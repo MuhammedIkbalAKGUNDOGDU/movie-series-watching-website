@@ -49,8 +49,6 @@ const OneElement = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(elementData);
-
   return (
     <div className="oneElement-Container">
       <Sidebar />

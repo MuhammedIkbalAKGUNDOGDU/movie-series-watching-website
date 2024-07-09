@@ -19,7 +19,7 @@ const Recommended = ({ Title, searchQuery }) => {
         setMovies(data.results); // Set movie data
       } catch (error) {
         console.error("Error fetching movies:", error);
-      } 
+      }
     };
 
     const fetchTVShows = async () => {
@@ -42,10 +42,10 @@ const Recommended = ({ Title, searchQuery }) => {
   }, []); // Only call once
 
   useEffect(() => {
-    const filteredMovies = movies.filter(movie =>
+    const filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    const filteredTvShows = tvShows.filter(tvShow =>
+    const filteredTvShows = tvShows.filter((tvShow) =>
       tvShow.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredContent([...filteredMovies, ...filteredTvShows]);
@@ -55,10 +55,16 @@ const Recommended = ({ Title, searchQuery }) => {
     <div className="container-trends">
       <div className="trend-title">{Title}</div>
       <div className="element-box">
-        {filteredContent.map(content => (
+        {filteredContent.map((content) => (
           <Element
             key={content.id}
-            year={content.release_date ? content.release_date.substring(0, 4) : (content.first_air_date ? content.first_air_date.substring(0, 4) : "")}
+            year={
+              content.release_date
+                ? content.release_date.substring(0, 4)
+                : content.first_air_date
+                ? content.first_air_date.substring(0, 4)
+                : ""
+            }
             type={content.title ? "Movie" : "TV Show"}
             name={content.title || content.name}
             attention={content.adult}

@@ -4,6 +4,7 @@ import Searchbox from "../components/Searcbox";
 import Trendings from "../components/Trendings";
 import Recommended from "../components/ElementShow";
 
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -12,7 +13,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container">,
       <Sidebar />
       <div className="container-2">
         <Searchbox onSearch={handleSearch} />
