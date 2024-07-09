@@ -379,12 +379,19 @@
 }
 .bookmark-sign:hover{
   transform: scale(1.2); /* Üstüne gelince büyüme efekti */
+  background-color: rgba(242, 243, 247, 0.5) ;
 }
 
 .bookmark-sign-icon{
   background-color: transparent;
   width: 25px;
   height: 25px;
+}
+.bookmark-sign-icon:hover{
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  fill: black;
 }
 
 .bookmark-container{
@@ -410,9 +417,11 @@
   fill: white;
 }
 
+
 /* WebKit browsers */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 ::-webkit-scrollbar-track {

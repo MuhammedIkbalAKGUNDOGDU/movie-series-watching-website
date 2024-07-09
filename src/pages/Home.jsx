@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container">,
+    <div className="container">
       <Sidebar />
       <div className="container-2">
         <Searchbox onSearch={handleSearch} />
