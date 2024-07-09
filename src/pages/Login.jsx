@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,6 +42,9 @@ const Login = () => {
 
   return (
     <div className="login-background">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <img className="login-logo" src={Logo} alt="Logo" />
 
       <div className="login-container">

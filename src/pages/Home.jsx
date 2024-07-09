@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Searchbox from "../components/Searcbox";
 import Trendings from "../components/Trendings";
 import Recommended from "../components/ElementShow";
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
 
   return (
     <div className="container">
+       <Helmet>
+        <title>HD FİLM CEHENNEMİ</title>
+      </Helmet>
       <Sidebar />
       <div className="container-2">
         <Searchbox onSearch={handleSearch} />

@@ -1,12 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.svg";
+import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
   const navigate = useNavigate();
 
   return (
     <div className="login-background">
+      <Helmet>
+        <title>Sign Up</title>
+      </Helmet>
       <img className="login-logo" src={Logo} alt="" />
 
       <div className="login-container">

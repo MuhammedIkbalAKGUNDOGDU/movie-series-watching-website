@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import Searchbox from "../components/Searcbox";
 import Element from "../components/Element";
+import { Helmet } from 'react-helmet';
+
 const Bookmarked = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -67,6 +69,9 @@ const Bookmarked = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>Bookmarked Movies or Tv Shows</title>
+      </Helmet>
       <Sidebar />
       <div className="container-2">
         <Searchbox onSearch={handleSearch} />

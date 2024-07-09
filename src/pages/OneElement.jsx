@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { useParams } from "react-router-dom";
 import Play from "../assets/play.svg";
+import { Helmet } from 'react-helmet';
 
 const OneElement = () => {
   const { id } = useParams();
@@ -51,6 +52,9 @@ const OneElement = () => {
 
   return (
     <div className="oneElement-Container">
+      <Helmet>
+        <title>{elementData.original_name || elementData.original_title}</title>
+      </Helmet>
       <Sidebar />
       <div className="oneElement-Container2">
         <h1>{elementData.title || elementData.name}</h1>
