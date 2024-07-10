@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import TrendElements from './TrendElements';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import React, { useState, useEffect } from "react";
+import TrendElements from "./TrendElements";
 
 const Trendings = () => {
   const [trendings, setTrendings] = useState([]);
@@ -27,8 +25,11 @@ const Trendings = () => {
 
         // Combine movies and TV shows into one array and sort by popularity
         const combinedTrendings = [
-          ...movieData.results.map((movie) => ({ ...movie, media_type: "movie" })),
-          ...tvData.results.map((tvShow) => ({ ...tvShow, media_type: "tv" }))
+          ...movieData.results.map((movie) => ({
+            ...movie,
+            media_type: "movie",
+          })),
+          ...tvData.results.map((tvShow) => ({ ...tvShow, media_type: "tv" })),
         ].sort((a, b) => b.popularity - a.popularity);
 
         setTrendings(combinedTrendings); // Set combined and sorted data
@@ -41,27 +42,30 @@ const Trendings = () => {
   }, []); // Only call once
 
   return (
-    <div className='container-trends'>
-      <div className='trend-title'>
-        Trending Movies and TV Shows
-      </div>
+    <div className="container-trends">
+      <div className="trend-title">Trending Movies and TV Shows</div>
       {/* Display only first 5 trendings */}
       <div className="trend-elements">
         {trendings.slice(0, 5).map((item) => (
           <TrendElements
             key={item.id}
-            year={item.media_type === "movie" ? (item.release_date ? item.release_date.substring(0, 4) : "") : (item.first_air_date ? item.first_air_date.substring(0, 4) : "")}
+            year={
+              item.media_type === "movie"
+                ? item.release_date
+                  ? item.release_date.substring(0, 4)
+                  : ""
+                : item.first_air_date
+                ? item.first_air_date.substring(0, 4)
+                : ""
+            }
             type={item.media_type === "movie" ? "Movie" : "TV Show"}
             name={item.media_type === "movie" ? item.title : item.name}
             attention={item.adult}
             splashart={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
             id={item.id}
           />
-          
         ))}
-       
       </div>
-      
     </div>
   );
 };

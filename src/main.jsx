@@ -25,8 +25,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route exact path="/tv/:id" element={<OneElement />} /> {/* Dynamic route */}
       <Route exact path="/signup" element={<SignUp />} />
       <Route exact path="/login" element={<Login />} />
-
-
     </Routes>
   </BrowserRouter>
 );

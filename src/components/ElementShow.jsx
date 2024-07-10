@@ -36,8 +36,7 @@ const Recommended = ({ Title, searchQuery }) => {
         console.error("Error fetching TV shows:", error);
       }
     };
-
-    fetchMovies();
+      fetchMovies();
     fetchTVShows();
   }, []); // Only call once
 
