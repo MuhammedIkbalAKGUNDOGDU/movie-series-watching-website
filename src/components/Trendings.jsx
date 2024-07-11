@@ -46,27 +46,29 @@ const Trendings = () => {
       <div className="trend-title">Trending Movies and TV Shows</div>
       {/* Display only first 5 trendings */}
       <div className="trend-elements">
-        {trendings.slice(0, 5).map((item) => (
-          <TrendElements
-            key={item.id}
-            year={
-              item.media_type === "movie"
-                ? item.release_date
-                  ? item.release_date.substring(0, 4)
+        
+          {trendings.slice(0, 5).map((item) => (
+            <TrendElements
+              key={item.id}
+              year={
+                item.media_type === "movie"
+                  ? item.release_date
+                    ? item.release_date.substring(0, 4)
+                    : ""
+                  : item.first_air_date
+                  ? item.first_air_date.substring(0, 4)
                   : ""
-                : item.first_air_date
-                ? item.first_air_date.substring(0, 4)
-                : ""
-            }
-            type={item.media_type === "movie" ? "Movie" : "TV Show"}
-            name={item.media_type === "movie" ? item.title : item.name}
-            attention={item.adult}
-            splashart={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-            id={item.id}
-          />
-        ))}
+              }
+              type={item.media_type === "movie" ? "Movie" : "TV Show"}
+              name={item.media_type === "movie" ? item.title : item.name}
+              attention={item.adult}
+              splashart={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+              id={item.id}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    
   );
 };
 
